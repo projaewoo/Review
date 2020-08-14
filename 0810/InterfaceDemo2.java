@@ -7,27 +7,27 @@ public class InterfaceDemo2 implements Father, Mother{
 	public void grandMother() {System.out.println("Called by GrandMother");}
 	
 	public static void main(String[] args) {
-		GrandFather gf = new InterfaceDemo2();
-		gf.grandFather();		//´ÙÇü¼º //¼±¾ğ : ÇÒ¾Æ¹öÁö, ½ÇÁ¦ : ¼ÕÀÚ	//ÇÒ¾Æ¹öÁö ÁÖ¼Ò·Î ÇÒ¾Æ¹öÁö ¸Ş¼Òµå¸¸ Á¢±Ù°¡´É
-		//gf.grandMother();		//ERROR	//ÀçÁ¤ÀÇµÇÁö ¾ÊÀº ¸Ş¼Òµå´Â »ç¿ëX
+		GrandFather gf = new InterfaceDemo2();	//ë‹¤í˜•ì„± //ì„ ì–¸ : í• ì•„ë²„ì§€, ì‹¤ì œ : ì†ì
+		gf.grandFather();	//ë‹¤í˜•ì„±X	//í• ì•„ë²„ì§€ ì£¼ì†Œë¡œ í• ì•„ë²„ì§€ ë©”ì†Œë“œë§Œ ì ‘ê·¼ê°€ëŠ¥
+		//gf.grandMother();		//ERROR	//ì¬ì •ì˜ë˜ì§€ ì•Šì€ ë©”ì†Œë“œëŠ” ì‚¬ìš©X
 		
-		//GrandMother gm = new GrandMother(); 	//ERROR 	//interface¿©¼­
+		//GrandMother gm = new GrandMother(); 	//ERROR 	//interfaceì—¬ì„œ
 		InterfaceDemo2 id = new InterfaceDemo2();
-		GrandMother gm = id;				//interface»ı¼º
+		GrandMother gm = id;				//interfaceìƒì„±
 		gm.grandMother();
 		
 		Father fa = new InterfaceDemo2();
 		fa.grandMother();
-		fa.grandFather();		//InterfaceÇü ÁÖ¼Ò´Â º»ÀÎÀÇ Ãß»ó¸Ş¼Òµå¸¦ ÀçÁ¤ÀÇÇÑ ¸Ş¼Òµå¸¸ Á¢±Ù°¡´É.		
-		fa.father();				//»ó¼Ó¹ŞÀº interfaceÇü ÁÖ¼Ò : »ó¼ÓÇÑ interfaceÀÇ ¸Ş¼Òµåµµ Á¢±Ù°¡´É.
+		fa.grandFather();		//Interfaceí˜• ì£¼ì†ŒëŠ” ë³¸ì¸ì˜ ì¶”ìƒë©”ì†Œë“œë¥¼ ì¬ì •ì˜í•œ ë©”ì†Œë“œë§Œ ì ‘ê·¼ê°€ëŠ¥.		
+		fa.father();				//ìƒì†ë°›ì€ interfaceí˜• ì£¼ì†Œ : ìƒì†í•œ interfaceì˜ ë©”ì†Œë“œë„ ì ‘ê·¼ê°€ëŠ¥.
 		
-		System.out.println(Father.PI);		//public static final»ó¼ö¿©¼­ Ãæµ¹X
+		System.out.println(Father.PI);		//public static finalìƒìˆ˜ì—¬ì„œ ì¶©ëŒX
 		System.out.println(Mother.PI);
 		
-		Mother [] array = new Mother[2];		//interfaceÀÎ MotherÀÇ ÀÚ½ÄÀÌ µé¾î¿Ã ¼ö ÀÖ´Â ¹è¿­
-		array[0] = id;										//¼±¾ğ : ºÎ¸ğÇü, ½ÇÁ¦ : ÀÚ½ÄÇü
-		array[1] = new InterfaceDemo2();		//¼±¾ğ : ºÎ¸ğÇü, ½ÇÁ¦ : ÀÚ½ÄÇü
-		for(Mother m : array) {			//¼±¾ğ : ºÎ¸ğÇü, ½ÇÁ¦ : ÀÚ½ÄÇü
+		Mother [] array = new Mother[2];		//interfaceì¸ Motherì˜ ìì‹ì´ ë“¤ì–´ì˜¬ ìˆ˜ ìˆëŠ” ë°°ì—´
+		array[0] = id;										//ì„ ì–¸ : ë¶€ëª¨í˜•, ì‹¤ì œ : ìì‹í˜•
+		array[1] = new InterfaceDemo2();		//ì„ ì–¸ : ë¶€ëª¨í˜•, ì‹¤ì œ : ìì‹í˜•
+		for(Mother m : array) {			//ì„ ì–¸ : ë¶€ëª¨í˜•, ì‹¤ì œ : ìì‹í˜•
 			m.mother();
 		}
 		
