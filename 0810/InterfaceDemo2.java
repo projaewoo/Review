@@ -8,7 +8,7 @@ public class InterfaceDemo2 implements Father, Mother{
 	
 	public static void main(String[] args) {
 		GrandFather gf = new InterfaceDemo2();	//다형성 //선언 : 할아버지, 실제 : 손자
-		gf.grandFather();	//다형성X	//할아버지 주소로 할아버지 메소드만 접근가능
+		gf.grandFather();	//다형성의 경우 X	//할아버지 주소로 할아버지 메소드만 접근가능
 		//gf.grandMother();		//ERROR	//재정의되지 않은 메소드는 사용X
 		
 		//GrandMother gm = new GrandMother(); 	//ERROR 	//interface여서
@@ -17,7 +17,7 @@ public class InterfaceDemo2 implements Father, Mother{
 		gm.grandMother();
 		
 		Father fa = new InterfaceDemo2();
-		fa.grandMother();
+		fa.grandMother();		
 		fa.grandFather();		//Interface형 주소는 본인의 추상메소드를 재정의한 메소드만 접근가능.		
 		fa.father();				//상속받은 interface형 주소 : 상속한 interface의 메소드도 접근가능.
 		
