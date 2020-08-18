@@ -2,18 +2,18 @@
 public class LambdaDemo {
 	public static void main(String[] args) {
 		
-		//ÀÍ¸íÅ¬·¡½º
+		//ìµëª…í´ë˜ìŠ¤
 //		MyInterface mi = new MyInterface() {
 //			@Override
 //			public int calculate(int a, int b) {
 //				return a + b;
 //			}
-//		};				//5~10ÇàÀÌ ÇÑ¹®Àå //µû¶ó¼­ ; ÇÊ¼ö.
+//		};				//5~10í–‰ì´ í•œë¬¸ì¥ //ë”°ë¼ì„œ ; í•„ìˆ˜.
 //		int result = mi.calculate(5, 9);
 //		System.out.println("result = " + result);
 		
-		//¶÷´Ù½Ä = ÀÍ¸í ¸Ş¼Òµå.		//¸Ş¼Òµå ÀÌ¸§ »ı·«.			//¶÷´Ù½Ä : (int a, int b) -> a * b
-		MyInterface mi = (int a, int b) -> a * b;				//int·Î ÆÇ´ÜµÉ °æ¿ì, parameter¾È¿¡ intµµ »ı·«°¡´É.
+		//ëŒë‹¤ì‹ = ìµëª… ë©”ì†Œë“œ (ìµëª… í´ë˜ìŠ¤ë¥¼ ê°„í¸í•˜ê²Œ ìƒëµí•œ ë©”ì†Œë“œ)		//ë©”ì†Œë“œ ì´ë¦„ ìƒëµ.			//ëŒë‹¤ì‹ : (int a, int b) -> a * b
+		MyInterface mi = (int a, int b) -> a * b;				//intë¡œ íŒë‹¨ë  ê²½ìš°, parameterì•ˆì— intë„ ìƒëµê°€ëŠ¥.
 		int result = mi.calculate(34, 12);
 		System.out.println("result = " + result);
 		
