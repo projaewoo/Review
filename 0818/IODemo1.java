@@ -1,14 +1,15 @@
 import java.io.IOException;
 import java.io.InputStream;
 
-//byte ¹è¿­À» StringÀ¸·Î º¯È¯ÇØ¼­ ÇÑ±Û ÀĞ¾îµéÀÌ±â
+//Scannerê°€ ë‚˜ì˜¤ê¸° ì´ì „, ê¸€ì ì½ì–´ë“¤ì´ëŠ” ë°©ì‹
+//byte ë°°ì—´ì„ Stringìœ¼ë¡œ ë³€í™˜í•´ì„œ í•œê¸€ ì½ì–´ë“¤ì´ê¸°
 public class IODemo1 {
 	public static void main(String[] args) throws IOException {
-		System.out.println("´ç½ÅÀº ¾î´À °èÀıÀ» ÁÁ¾ÆÇÏ½Ê´Ï±î? : ");
-		InputStream is = System.in;			//Ãß»óÅ¬·¡½º¿©¼­ ÀÚ½ÄÀ¸·Î ¼±¾ğ.
-		byte [] buffer = new byte[64];		//64byte = ÇÑ±Û 32ÀÚ °¡´É.
-		int count = is.read(buffer);		//ÀĞ¾îµéÀÎ ±ÛÀÚ ¼ö.
-		String season = new String(buffer, 0, count);		//String»ı¼ºÀÚ ÅëÇØ¼­ byte¹è¿­À» stringÀ¸·Î º¯È¯
+		System.out.println("ë‹¹ì‹ ì€ ì–´ëŠ ê³„ì ˆì„ ì¢‹ì•„í•˜ì‹­ë‹ˆê¹Œ? : ");
+		InputStream is = System.in;			//ì¶”ìƒí´ë˜ìŠ¤ì—¬ì„œ ìì‹ìœ¼ë¡œ ì„ ì–¸.
+		byte [] buffer = new byte[64];		//64byte = í•œê¸€ 32ì ê°€ëŠ¥.
+		int count = is.read(buffer);		//ì½ì–´ë“¤ì¸ ê¸€ì ìˆ˜.
+		String season = new String(buffer, 0, count);		//Stringìƒì„±ì í†µí•´ì„œ byteë°°ì—´ì„ stringìœ¼ë¡œ ë³€í™˜
 		System.out.println("season = " + season);
 	} 
 }
