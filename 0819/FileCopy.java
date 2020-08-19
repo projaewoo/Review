@@ -5,30 +5,30 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-//jpg ÆÄÀÏ º¹»çÇÏ±â.
+//jpg íŒŒì¼ ë³µì‚¬í•˜ê¸°.
 public class FileCopy {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("¿øº» ÆÄÀÏ : ");
+		System.out.print("ì›ë³¸ íŒŒì¼ : ");
 		String originalPath = scan.next().trim();
-		System.out.print("º¹»ç ÆÄÀÏ : ");
+		System.out.print("ë³µì‚¬ íŒŒì¼ : ");
 		String targetPath = scan.next().trim();
 		int count = 0, su;
 		try(BufferedInputStream bis = 
-				new BufferedInputStream(new FileInputStream(originalPath));		//°ıÈ£ ¾È¿¡ µÎ ¹®Àå ÀÌ»óÀÏ°æ¿ì ;·Î ±¸ºĞ
+				new BufferedInputStream(new FileInputStream(originalPath));		//ê´„í˜¸ ì•ˆì— ë‘ ë¬¸ì¥ ì´ìƒì¼ê²½ìš° ;ë¡œ êµ¬ë¶„
 				BufferedOutputStream bos =
-				new BufferedOutputStream(new FileOutputStream(targetPath))) {			//AutoCloseableÀÇ ÀÚ¼ÕÀÌ try¹ş¾î³ª¸é ÀúÀı·Î ´İÈû. //±»ÀÌ close()ÇÒ ÇÊ¿ä ¾øÀ½.
+				new BufferedOutputStream(new FileOutputStream(targetPath))) {			//AutoCloseableì˜ ìì†ì´ tryë²—ì–´ë‚˜ë©´ ì €ì ˆë¡œ ë‹«í˜. //êµ³ì´ close()í•  í•„ìš” ì—†ìŒ.
 			
-			while((su = bis.read()) >= 0) {		//1byteÀĞ¾î¼­ su¿¡ ³ÖÀ½.	//BufferedInputStreamÀÌ InputSTreamÀ¸·Î ³¡³ª¼­ ¹ÙÀÌÆ® ±âÁØÀ¸·Î ÀĞ¾îµéÀÓ.
+			while((su = bis.read()) >= 0) {	//read()ì˜ ë°˜í™˜í˜• : int  //1byteì½ì–´ì„œ suì— ë„£ìŒ.	//BufferedInputStreamì´ InputSTreamìœ¼ë¡œ ëë‚˜ì„œ ë°”ì´íŠ¸ ê¸°ì¤€ìœ¼ë¡œ ì½ì–´ë“¤ì„.
 				count++;		
-				bos.write(su);		//ÇÏ³ª ÀĞ°í ³»º¸³»°í
+				bos.write(su);		//í•˜ë‚˜ ì½ê³  ë‚´ë³´ë‚´ê³ 
 			}
 			System.out.println((count/1000) + " KB file copied successfully");
-		}catch(IOException ex) {			//buffer°ú fileÀÇ ´ëÇ¥ Exception : IOException
+		}catch(IOException ex) {			//bufferê³¼ fileì˜ ëŒ€í‘œ Exception : IOException
 			System.out.println(ex);
 		}
 	}
 }
-// ÀÔ·Â°ª
+// ì…ë ¥ê°’
 //		./index.jpg	
 // 		C:/temp/index1.jpg
