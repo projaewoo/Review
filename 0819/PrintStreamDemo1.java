@@ -5,11 +5,11 @@ import java.io.PrintStream;
 import java.util.Date;
 import java.util.Scanner;
 
-//Scanner·Î ÀĞ¾îµé¿©¼­ ÀĞ¾îµéÀÎ ³»¿ëÀ» File·Î ¸¸µé¾î¼­ ³»º¸³»±â.
+//Scannerë¡œ ì½ì–´ë“¤ì—¬ì„œ ì½ì–´ë“¤ì¸ ë‚´ìš©ì„ Fileë¡œ ë§Œë“¤ì–´ì„œ ë‚´ë³´ë‚´ê¸°.
 public class PrintStreamDemo1 {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);		//Ç¥ÁØÀÔ·Â
-		System.out.print("ÀúÀå °æ·Î : ");
+		Scanner scan = new Scanner(System.in);		//í‘œì¤€ì…ë ¥
+		System.out.print("ì €ì¥ ê²½ë¡œ : ");
 		String path = scan.next();
 		path += String.format("%tF", new Date()) + ".txt";
 		try(PrintStream ps = 
@@ -17,9 +17,9 @@ public class PrintStreamDemo1 {
 						new FileOutputStream(path)), true)) {
 			String line = null;
 			int count = 0;
-			while((line = scan.nextLine()) != null) {			//nullÀÌ¸é ³¡.		
-				ps.printf("%3d : %s", ++count, line);		//lineÀĞ¾î¼­ ³»º¸³¿	//¸î¹ø¤Š ÁÙÀÎÁö Ãâ·ÂÇÏ°í, ÀĞ¾îµéÀÎ lineÀ» Ãâ·Â.
-			}
+			while((line = scan.nextLine()) != null) {			//nullì´ë©´ ë.		
+				ps.printf("%3d : %s", ++count, line);		//lineì½ì–´ì„œ ë‚´ë³´ëƒ„	//ëª‡ë²ˆì§¸ ì¤„ì¸ì§€ ì¶œë ¥í•˜ê³ , ì½ì–´ë“¤ì¸ lineì„ ì¶œë ¥.
+			}				//PrintStreamí˜• psë³€ìˆ˜ê°€ ì‚¬ìš©ê°€ëŠ¥í•œ ë©”ì†Œë“œ : PrintStreamë©”ì†Œë“œ, OutputStreamì˜ staticë©”ì†Œë“œ(PrintStreamì˜ ìƒì„±ì : (OutputStream)ì´ë¯€ë¡œ Outpustreamì˜ staticë©”ì†Œë“œ ì‚¬ìš©ê°€ëŠ¥)
 			System.out.println("Save Success");
 		} catch (IOException ex) {
 			System.out.println(ex);
